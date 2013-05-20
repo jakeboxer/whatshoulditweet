@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -rf .bundle
+
+if [ -z "$1" ]; then
+  args="--without staging:production"
+else
+  args="$@"
+fi
+
+bundle check --path vendor/gems || bundle install --binstubs --local --path vendor/gems $args
