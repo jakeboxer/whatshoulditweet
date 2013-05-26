@@ -3,7 +3,7 @@
 
 <h2>what's yo name</h2>
 
-<%= form_tag(lookup_users_path) do -%>
+<%= form_tag(lookup_users_path, :method => :get) do -%>
   @<input name="username" type="email">
 
   <button type="submit">is my name on Twitter</button>

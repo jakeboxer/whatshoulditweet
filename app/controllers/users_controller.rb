@@ -8,5 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
+    @username = params[:id]
   end
 end
