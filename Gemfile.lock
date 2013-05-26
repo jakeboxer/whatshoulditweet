@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jakeboxer/two_chainz.git
-  revision: da49f606957c7f58398ee3c26a866504c9a8ee69
+  revision: 94de8f115db4afe07ff34ce2746ffef3960a72e2
   specs:
     two_chainz (0.0.1)
 
