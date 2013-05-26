@@ -18,3 +18,4 @@ pickle-email-*.html
 
 # To avoid getting the gem sources
 vendor/ruby
+vendor/gems/ruby/*/gems
