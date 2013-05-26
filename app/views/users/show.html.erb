@@ -1,7 +1,7 @@
 <h1>wassup <%= @username %>.</h1>
 <p>Here's something you'd prolly tweet:</p>
 
-<div class="potential-tweet">the great thing about sleeping on a mattress with no bed frame is lol good luck getting under there monsters</div>
+<div class="potential-tweet"><%= @potential_tweet %></div>
 
 <%= form_tag(lookup_users_path, :method => :get) do -%>
   <button type="submit">get another tweet for</button>
