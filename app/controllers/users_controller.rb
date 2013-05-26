@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @username = params[:id]
-    @tweets   = Twitter.user_timeline(@username)
+    @tweets   = Twitter.user_timeline(@username, :count => 200)
 
     generator = TwoChainz::Generator.new(:boring => true)
 
