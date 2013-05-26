@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'twitter', "~> 4.6.2"
+  gem 'two_chainz', :git => "git://github.com/jakeboxer/two_chainz.git"
 end
 
 group :development, :test do
