@@ -1,5 +1,9 @@
 Whatshoulditweet::Application.routes.draw do
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show] do
+    collection do
+      get :lookup
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
