@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @username = params[:id]
     @tweets   = Twitter.user_timeline(@username, :count => 200, :include_rts => false, :trim_user => true)
 
-    generator = TwoChainz::Generator.new(:boring => true)
+    generator = TwoChainz::Generator.new
 
     # Hear all the tweets
     @tweets.each {|tweet| generator.hear(tweet.text) }
