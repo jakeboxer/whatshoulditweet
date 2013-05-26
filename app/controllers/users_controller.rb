@@ -9,5 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @username = params[:id]
+    @tweets   = Twitter.user_timeline(@username)
   end
 end
