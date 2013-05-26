@@ -7,3 +7,13 @@
   <button type="submit">get another tweet for</button>
   @<input name="username" type="text" value="<%= @username %>">
 <% end -%>
+
+<h2>Some of your recent tweets that were used</h2>
+
+<ul class="past-tweets">
+  <% @tweets.each do |tweet| %>
+    <li>
+      <%= tweet.text %>
+    </li>
+  <% end %>
+</ul>
