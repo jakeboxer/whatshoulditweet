@@ -9,20 +9,24 @@ class UsersController < ApplicationController
 
   def show
     @username = params[:id]
-    @tweets   = Twitter.user_timeline(@username, :count => 200, :include_rts => false, :trim_user => true)
+    @tweets   = Twitter.user_timeline(@username,
+      :count       => 200,
+      :include_rts => false,
+      :trim_user   => true
+    )
 
     generator = TwoChainz::Generator.new
-
-    shortest = 140
-    longest  = 0
+    shortest  = 140
+    longest   = 0
 
     @tweets.each do |tweet|
       text = tweet.text
       generator.hear(text)
 
       # Record counts
-      shortest = text.length if text.length < shortest
-      longest  = text.length if text.length > longest
+      length   = text.length
+      shortest = length if length < shortest
+      longest  = length if length > longest
     end
 
     @potential_tweet = generator.spit(
