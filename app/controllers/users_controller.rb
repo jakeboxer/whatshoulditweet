@@ -13,9 +13,21 @@ class UsersController < ApplicationController
 
     generator = TwoChainz::Generator.new
 
-    # Hear all the tweets
-    @tweets.each {|tweet| generator.hear(tweet.text) }
+    shortest = 140
+    longest  = 0
 
-    @potential_tweet = generator.spit(:max_chars => 140)
+    @tweets.each do |tweet|
+      text = tweet.text
+      generator.hear(text)
+
+      # Record counts
+      shortest = text.length if text.length < shortest
+      longest  = text.length if text.length > longest
+    end
+
+    @potential_tweet = generator.spit(
+      :max_chars => longest,
+      :min_chars => shortest
+    )
   end
 end
